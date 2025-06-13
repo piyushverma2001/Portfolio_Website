@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piyush Verma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="s1">
+        <div class="top-bar-wrapper">
+            <ul class="top-page-info">
+                <li><b>IP Address:</b> <i>{{ weatherInfo.1.ip }} ({{ weatherInfo.1.type|upper }})</i></li>
+                <li><b>Location:</b> <i>{{ weatherInfo.1.city }}, {{ weatherInfo.1.region }}, {{ weatherInfo.1.country_name }}, {{ weatherInfo.1.continent_name }}</i></li>
+            </ul>
+            <div id="real-time-clock-display"></div>
+        </div>
+        <div class="main-container">
+            <div class="greeting-wrapper">
+                <h1>Hi, I'm Piyush Verma!</h1>
+            </div>
+
+            <div class="intro-wrapper">
+                <div class="nav-wrapper">
+                    <a href="index.html">
+                        <div class="dots-wrapper">
+                            <div id="dot-1" class="browser-dot"></div>
+                            <div id="dot-2" class="browser-dot"></div>
+                            <div id="dot-3" class="browser-dot"></div>
+                        </div>
+                    </a>
+
+                    <ul id="navigation">
+                        <li>
+                            <button type="button" class="btn btn-sm weather-nav-trigger" data-bs-toggle="modal" data-bs-target="#weatherModal" aria-label="View weather details for {{ weatherInfo.0.location.region }}">
+                                <span class="weather-summary">
+                                    <img src="https:{{ weatherInfo.0.current.condition.icon }}" alt="{{ weatherInfo.0.current.condition.text }}" class="weather-icon">
+                                    <span class="temperature">{{ weatherInfo.0.current.temp_c }}°C/{{ weatherInfo.0.current.temp_f }}°F</span>
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="left-column">
+                    <img id="profile_pic" src="{% static 'images/goku.png' %}">
+                    <h5 style="text-align: center; padding-top: 10px;">Personalize Theme</h5>
+
+                    <div id="theme-options-wrapper">
+                        <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                        <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+                        <div data-mode="green" id="green-mode" class="theme-dot"></div>
+                        <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+                    </div>
+
+                    <p id="settings-note">*Theme setting will be saved for<br>your next visit.</p>
+                </div>
+
+                <div class="right-column">
+                    <div id="preview-shadow">
+                        <div id="preview">
+                            <div id="corner-tl" class="corner"></div>
+                            <div id="corner-tr" class="corner"></div>
+                            <h3>What I Do</h3>
+                            <p>As a B.Tech CSE student, I build robust web solutions, driven by a passion for fitness, sports, and exploring the world.</p>
+                            <div id="corner-br" class="corner"></div>
+                            <div id="corner-bl" class="corner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s2">
+        <div class="main-container">
+
+            <div class="about-wrapper">
+                <div class="about-me">
+                    <h4>More about me</h4>
+                    <p>
+                        As a developer, I thrive on building innovative projects and continuous learning through in-depth research. My creative pursuits extend to Software Development, Web Development, Graphic Designing and Video Editing.
+                    </p>
+                    <hr>
+
+                    <h4>TOP EXPERTISE</h4>
+                    <a target="_blank" href="">Download Resume</a>
+                    <p>Fullstack Developer with primary focus on Backend Development:</p>
+
+                    <div id="skills">
+                        <ul>
+                            <li>Python/Javascript</li>
+                            <li>HTML5/CSS3</li>
+                            <li>Git</li>
+                        </ul>
+
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>MERN Stack</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <img id="social_img" src="{% static 'images/desktop.jpg' %}">
+                    <h3>Find me on Social Media </h3>
+
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/piyush-verma-/">LinkedIn</a>
+                        <a target="_blank" href="https://github.com/piyushverma2001">GitHub</a>
+                        <a target="_blank" href="https://leetcode.com/u/piyushverma/">LeetCode</a>
+                        <a target="_blank" href="https://www.instagram.com/_piyushverma">Instagram</a>
+                        <a target="_blank" href="https://www.x.com/_PiyushVerma">X (Twitter)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s1">
+        <div class="main-container">
+            <h3 style="text-align: center;">Some of my projects</h3>
+
+            <div class="post-wrapper">
+                <div class="post">
+                    <img class="thumbnail" src="{% static 'images/expensetracker.png' %}">
+                    <div class="post-preview">
+                        <h6 class="post-title">Expense Tracker App</h6>
+                        <p class="post-intro">An expense tracker for tracking transactions and balances.</p>
+                        <a href="https://expense-tracker-dtm3.onrender.com/">See Live Website</a>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img class="thumbnail" src="{% static 'images/jarvisai.png' %}">
+                    <div class="post-preview">
+                        <h6 class="post-title">Jarvis AI Assistant</h6>
+                        <p class="post-intro">An AI assistant for leveraging natural language processing.</p>
+                        <a href="https://www.github.com/piyushverma2001/Jarvis_AI">See Code on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img class="thumbnail" src="{% static 'images/hotelreservation.png' %}">
+                    <div class="post-preview">
+                        <h6 class="post-title">Hotel Reservation Site</h6>
+                        <p class="post-intro">A website for exploring hotel rooms, features and pricing.</p>
+                        <a href="https://www.github.com/piyushverma2001/Hotel_Reservation_Site">See Code on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img class="thumbnail" src="{% static 'images/flappy_bird.webp' %}">
+                    <div class="post-preview">
+                        <h6 class="post-title">Flappy Bird Game</h6>
+                        <p class="post-intro">A clone of the popular Flappy Bird game.</p>
+                        <a href="https://github.com/piyushverma2001/Flappy_Bird_Game">See Code on GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="s2">
+        <div class="main-container">
+            <h3 style="text-align: center;">Get In Touch</h3>
+            <form id="contact-form" method="POST">
+                {% csrf_token %}
+
+                <label for="name">Name</label>
+                <input id="name" class="input-field" type="text" name="name" required>
+
+                <label for="subject">Subject</label>
+                <input id="subject" class="input-field" type="text" name="subject" required>
+
+                <label for="email">Email</label>
+                <input id="email" class="input-field" type="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" class="input-field" name="message" required></textarea>
+
+                <input id="submit-btn" type="submit" value="Send">
+            </form>
+        </div>
+    </section>
+
+    <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModal" aria-hidden="true" data-bs-target="#staticBackdrop">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="weatherModal">Weather Info</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>Time Zone</strong>:
+                        {{ weatherInfo.0.location.tz_id }}
+                    </p>
+                    <p>
+                        <strong>Wind Speed</strong>:
+                        {{ weatherInfo.0.current.wind_mph }} mph /
+                        {{ weatherInfo.0.current.wind_kph }} kph
+                    </p>
+                    <p>
+                        <strong>Humidity</strong>:
+                        {{ weatherInfo.0.current.humidity }}%
+                    </p>
+                    <p>
+                        <strong>Air Quality (PM2.5)</strong>:
+                        {{ weatherInfo.0.current.air_quality.pm2_5 }} µg/m³
+                    </p>
+
+                    <p class="text-center text-muted small mt-3">
+                        Powered by <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank" rel="noopener noreferrer">WeatherAPI.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
